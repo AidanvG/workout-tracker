@@ -5,6 +5,9 @@ workout plans. Users will be able to create workouts with whatever custom exerci
 document the number of sets and repetitions they do for each exercise in the workout and change or 
 remove exercises or workouts.
 
+Data will be stored in a Postgresql database and interacted with through an API. I would also like
+to be able to build some sort of UI using React if I have enough time.
+
 ## <u> User Stories </u>
 
 1. As a user, so that I can create a custom workout plan, I want to be able to create a workout.
@@ -15,7 +18,7 @@ remove exercises or workouts.
 <br></br>
 4. As a user, so that I can see my workout history, I want to be able to log what weight I used, and how many reps I performed in each set.
 <br></br>
-5. As a user, so that I can adjust my targets, I want to be edit the exercises in my workouts.
+5. As a user, so that I can adjust my targets, I want to be able to edit the exercises in my workouts.
 <br></br>
 6. As a user, so that I don't get bored, I want to be able to make changes to my workouts.
 <br></br>
