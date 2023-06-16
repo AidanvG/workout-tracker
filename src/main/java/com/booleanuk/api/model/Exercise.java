@@ -15,17 +15,16 @@ public class Exercise {
     private String name;
 
     @Column(name = "sets")
-    private int sets;
-
+    private Integer sets;
 
     @Column(name = "reps")
-    private int reps;
+    private Integer reps;
 
     @Column(name = "current_weight")
-    private int currentWeight;
+    private Integer currentWeight;
 
     @Column(name = "starting_weight")
-    private int startingWeight;
+    private Integer startingWeight;
 
     @ManyToOne
     @JoinColumn(name = "workout_id", nullable = false)
@@ -36,7 +35,7 @@ public class Exercise {
         super();
     }
 
-    public Exercise(String name, int sets, int reps, int currentWeight, int startingWeight, Workout workout) {
+    public Exercise(String name, Integer sets, Integer reps, Integer currentWeight, Integer startingWeight, Workout workout) {
         this.setName(name);
         this.setSets(sets);
         this.setReps(reps);
@@ -57,35 +56,35 @@ public class Exercise {
         this.name = name;
     }
 
-    public int getSets() {
+    public Integer getSets() {
         return sets;
     }
 
-    public void setSets(int sets) {
+    public void setSets(Integer sets) {
         this.sets = sets;
     }
 
-    public int getReps() {
+    public Integer getReps() {
         return reps;
     }
 
-    public void setReps(int reps) {
+    public void setReps(Integer reps) {
         this.reps = reps;
     }
 
-    public int getCurrentWeight() {
+    public Integer getCurrentWeight() {
         return currentWeight;
     }
 
-    public void setCurrentWeight(int currentWeight) {
+    public void setCurrentWeight(Integer currentWeight) {
         this.currentWeight = currentWeight;
     }
 
-    public int getStartingWeight() {
+    public Integer getStartingWeight() {
         return startingWeight;
     }
 
-    public void setStartingWeight(int startingWeight) {
+    public void setStartingWeight(Integer startingWeight) {
         this.startingWeight = startingWeight;
     }
 
