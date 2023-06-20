@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface WorkoutRepository extends JpaRepository<Workout, Integer> {
     List<Workout> getWorkoutsByProgramId(int program_id);
+    Workout getWorkoutByProgramIdAndId(int program_id, int id);
 }

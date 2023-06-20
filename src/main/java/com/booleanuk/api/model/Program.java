@@ -1,6 +1,6 @@
 package com.booleanuk.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,17 +17,17 @@ public class Program {
     private String name;
 
     @Column(name = "split")
-    private String split;
+    private Integer split;
 
     @OneToMany(mappedBy = "program")
-    @JsonIgnoreProperties("program")
+    @JsonIgnore
     private List<Workout> workouts;
 
     public Program() {
         super();
     }
 
-    public Program(String name, String split) {
+    public Program(String name, Integer split) {
         super();
         this.setName(name);
         this.setSplit(split);
@@ -45,11 +45,11 @@ public class Program {
         this.name = name;
     }
 
-    public String getSplit() {
+    public Integer getSplit() {
         return split;
     }
 
-    public void setSplit(String split) {
+    public void setSplit(Integer split) {
         this.split = split;
     }
 

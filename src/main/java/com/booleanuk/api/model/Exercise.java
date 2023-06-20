@@ -31,17 +31,23 @@ public class Exercise {
     @JsonIgnore
     private Workout workout;
 
+    @ManyToOne
+    @JoinColumn(name = "program_id", nullable = false)
+    @JsonIgnore
+    private Program program;
+
     public Exercise() {
         super();
     }
 
-    public Exercise(String name, Integer sets, Integer reps, Integer currentWeight, Integer startingWeight, Workout workout) {
+    public Exercise(String name, Integer sets, Integer reps, Integer currentWeight, Integer startingWeight, Workout workout, Program program) {
         this.setName(name);
         this.setSets(sets);
         this.setReps(reps);
         this.setCurrentWeight(currentWeight);
         this.setStartingWeight(startingWeight);
         this.setWorkout(workout);
+        this.setProgram(program);
     }
 
     public int getId() {
@@ -94,5 +100,13 @@ public class Exercise {
 
     public void setWorkout(Workout workout) {
         this.workout = workout;
+    }
+
+    public Program getProgram() {
+        return program;
+    }
+
+    public void setProgram(Program program) {
+        this.program = program;
     }
 }

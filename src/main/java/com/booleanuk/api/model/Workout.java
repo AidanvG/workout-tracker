@@ -1,7 +1,6 @@
 package com.booleanuk.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -26,7 +25,7 @@ public class Workout {
     private Program program;
 
     @OneToMany(mappedBy = "workout")
-    @JsonIgnoreProperties("workout")
+    @JsonIgnore
     private List<Exercise> exercises;
 
     public Workout() {

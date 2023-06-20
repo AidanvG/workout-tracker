@@ -26,10 +26,11 @@ public class WorkoutController {
         return this.workoutRepository.getWorkoutsByProgramId(programId);
     }
 
-    @GetMapping("/{workoutId}")
-    public ResponseEntity<Workout> getWorkoutById(@PathVariable int workoutId) {
-        Workout workoutToFind = this.workoutRepository.findById(workoutId).orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "This workout id could not be found."));
+    @GetMapping("/{id}")
+    public ResponseEntity<Workout> getWorkoutById(@PathVariable("programId") int programId,
+                                                  @PathVariable("id") int id) {
+        Workout workoutToFind = this.workoutRepository.getWorkoutByProgramIdAndId(programId, id);
+        if(workoutToFind == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "This workout could not be found.");
         return ResponseEntity.ok(workoutToFind);
     }
 
@@ -41,9 +42,9 @@ public class WorkoutController {
         return new ResponseEntity<Workout>(this.workoutRepository.save(workout), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{workoutId}")
-    public ResponseEntity<Workout> updateWorkout(@PathVariable int workoutId, @RequestBody Workout workout) {
-        Workout workoutToUpdate = this.workoutRepository.findById(workoutId).orElseThrow(() -> new ResponseStatusException(
+    @PutMapping("/{id}")
+    public ResponseEntity<Workout> updateWorkout(@PathVariable int id, @RequestBody Workout workout) {
+        Workout workoutToUpdate = this.workoutRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "Could not update this workout, workout id could not be found."));
 
         if (workout.getName() != null) workoutToUpdate.setName(workout.getName());
@@ -52,9 +53,9 @@ public class WorkoutController {
         return new ResponseEntity<Workout>(this.workoutRepository.save(workoutToUpdate), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{workoutId}")
-    public ResponseEntity<Workout> deleteWorkout(@PathVariable int workoutId) {
-        Workout workoutToDelete = this.workoutRepository.findById(workoutId).orElseThrow(() -> new ResponseStatusException(
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Workout> deleteWorkout(@PathVariable int id) {
+        Workout workoutToDelete = this.workoutRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "Could not delete this workout, workout id could not be found."));
         this.workoutRepository.delete(workoutToDelete);
         return ResponseEntity.ok(workoutToDelete);
