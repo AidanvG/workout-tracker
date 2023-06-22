@@ -26,7 +26,5 @@ to be able to build some sort of UI using React if I have enough time.
 <br></br>
 8. As a user, so that I stop doing outdated workouts, I want to be able to remove entire workouts.
 <br></br>
-9. As a user, so that I can track my progress, I want to be able to view my history for a particular workout.
-<br></br>
-10. As a user, so that I can track my progress, I want to be able to see how much weight I have added for exercises since I started.
+9. As a user, so that I can track my progress, I want to be able to see how much weight I have added for exercises since I started.
 <br></br>
