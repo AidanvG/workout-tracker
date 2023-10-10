@@ -5,8 +5,7 @@ workout plans. Users will be able to create workouts with whatever custom exerci
 document the number of sets and repetitions they do for each exercise in the workout and change or 
 remove exercises or workouts.
 
-Data will be stored in a Postgresql database and interacted with through an API. I would also like
-to be able to build some sort of UI using React if I have enough time.
+Data will be stored in a Postgresql database and interacted with through an API.
 
 ## <u> User Stories </u>
 
